@@ -1,0 +1,21 @@
+Week 4 Assessment Project
+Project Title: The "AI Fake News & Rumor Buster"
+The Scenario
+You are hired as digital investigators! They get a folder with 3 mixed files about a viral tech rumor:
+A PDF whitepaper
+A CSV of leaked internal logs
+A JSON file of social media posts
+Their job is to build a simple LangChain pipeline that cross-checks all three sources to find out what is Fact vs. Fiction.
+10-Point Project Checklist
+Multi-Format Reader: Parse 3 small files (.pdf, .csv, .json) into clean text using simple Python loaders.
+Smart Chunking: Split the PDF into logical paragraphs and the CSV/JSON into record-level chunks so no context gets chopped in half.
+Metadata Tagging: Attach 2 basic metadata fields to each chunk: source_type (e.g., "Official" vs. "Rumor") and date.
+Local Vector Store: Store and index all embeddings locally using Chroma DB or FAISS (zero complex cloud setup required).
+Quick Vector Health Check: Print a simple summary showing total chunk count and sample vector search scores to ensure embeddings loaded correctly.
+Filtered Search: Run a vector query with a metadata filter to isolate only official sources first, then search social media logs second.
+LangChain Sequential Chain: Wire up a 2-step LangChain workflow:
+Step 1: Retrieve relevant snippets.
+Step 2: Pass retrieved snippets to an OpenAI prompt.
+Fact-Checker Prompt: Write an OpenAI prompt template that explicitly instructs the model to compare sources and highlight any direct contradictions.
+Simple Chat Memory: Add basic LangChain conversation memory so the user can ask follow-up questions (e.g., "Who started this rumor?").
+Sanity Check Test: Test the system against 3 pre-written test queries and print a pass/fail check on whether the AI caught the deliberate contradiction.
