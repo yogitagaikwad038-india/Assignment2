@@ -1,10 +1,9 @@
 from rich import print
 
-from langchain_openai import ChatOpenAI
-
 from langchain_text_splitters import (
     RecursiveCharacterTextSplitter
 )
+from services.llm_service import get_llm
 
 from config.settings import *
 
@@ -195,10 +194,7 @@ print(
     "\nINFO --- [NODE] OPENAI ANALYSIS ---"
 )
 
-llm = ChatOpenAI(
-    model=LLM_MODEL,
-    temperature=0
-)
+llm = get_llm()
 
 output = analyze_claim(
     llm,

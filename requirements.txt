@@ -3,7 +3,7 @@ langchain-community
 langchain-openai
 langchain-huggingface
 langchain-text-splitters
-
+python-dotenv
 faiss-cpu
 
 sentence-transformers
